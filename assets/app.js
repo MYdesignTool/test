@@ -14,6 +14,17 @@
     if (!P[id]) P[id] = { n: 0, w: 0, lw: 0, star: 0, ok: 0 };
     return P[id];
   }
+  /* 错题本成员判定：wl=1 在错题本（连续做对 2 次自动移出）；旧数据无 wl 时退回 lw */
+  function inWrongBook(r) { return !!(r && (r.wl !== undefined ? r.wl : r.lw)); }
+  function applyResult(r, right) {
+    if (right) {
+      r.ok++; r.lw = 0;
+      r.cs = (r.cs || 0) + 1;
+      if (r.cs >= 2) r.wl = 0;
+    } else {
+      r.w++; r.lw = 1; r.wl = 1; r.cs = 0;
+    }
+  }
 
   /* ---------------- 状态 ---------------- */
   var S = {
@@ -73,7 +84,7 @@
     if (S.chapters.length && S.chapters.indexOf(q.chapter) < 0) return false;
     var r = P[q.id];
     if (S.status === 'todo' && r && r.n) return false;
-    if (S.status === 'wrong' && !(r && r.lw)) return false;
+    if (S.status === 'wrong' && !inWrongBook(r)) return false;
     if (S.status === 'star' && !(r && r.star)) return false;
     if (S.status === 'done' && !(r && r.n)) return false;
     if (S.kw) {
@@ -237,7 +248,7 @@
   function markResult(q, right) {
     var r = rec(q.id);
     r.n++;
-    if (right) { r.ok++; r.lw = 0; } else { r.w++; r.lw = 1; }
+    applyResult(r, right);
     save();
   }
 
@@ -372,7 +383,7 @@
         else g = (a === b) ? 1 : 0;
         var r = rec(it.q.id);
         r.n++;
-        if (g) { r.ok++; r.lw = 0; } else { r.w++; r.lw = 1; }
+        applyResult(r, !!g);
         save();
       } else {
         /* 主观题：没写 0 分；写了按参考答案关键词命中比例给分（0.5 分步进）；手动自评后以手动为准 */
@@ -500,7 +511,7 @@
     list.forEach(function (q) {
       var r = P[q.id];
       if (r && r.n) done++;
-      if (r && r.lw) wrong++;
+      if (inWrongBook(r)) wrong++;
       if (r && r.star) star++;
       if (r && r.n && OBJ[q.type]) { objDone++; if (!r.lw) objRight++; }
       if (!tstat[q.type]) tstat[q.type] = { n: 0, done: 0, right: 0 };
@@ -632,7 +643,7 @@
       b.onclick = function () {
         var q = IDX[S.queue[S.idx]]; if (!q) return;
         var ok = b.dataset.g === '1', r = rec(q.id);
-        if (ok) { r.ok++; r.lw = 0; } else { r.w++; r.lw = 1; }
+        applyResult(r, ok);
         save(); nextQ();
       };
     });
