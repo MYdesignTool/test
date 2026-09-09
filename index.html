@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-page-node-id="LBsucemCsWXGdwDPoqaLCS">
+<head data-page-node-id="iAPEyeUDrjWfDGRBPkOASU">
+<meta charset="UTF-8" data-page-node-id="qbRiMtKFtu8vNfLjVvd6f1">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" data-page-node-id="n8gaC1SKT0qNAa6uNYOUmr">
+<title>自考冲刺 · 刷题背题台</title>
+<link rel="stylesheet" href="assets/style.css" data-page-node-id="MU5SecOY2Lscv1DQVrVe5j">
+</head>
+<body data-page-node-id="RNN3Cc1m5jqCDUxl1hpDLD">
+
+<header class="topbar" data-page-node-id="U0UnbC2uUxJmXdjNDOIYAy">
+  <div class="brand" data-page-node-id="hkDTPgWGTRqV3DaOuubhF8">
+    <span class="logo" data-page-node-id="OBSwrFaxLfw7FHQef1oSV8">60</span>
+    <div data-page-node-id="J6iob0CenhLqTIGR7QWxxK">
+      <div class="t1" data-page-node-id="zGoQPg3HpcUXxi2rbNFOGQ">自考冲刺刷题台</div>
+      <div class="t2" id="ddlText" data-page-node-id="vFXtwFGrFk6Rg0Hzrv9Bch">距离考试 --</div>
+    </div>
+  </div>
+  <nav class="subjects" data-page-node-id="MPhU7NedLoYvDOEm41REjA">
+    <button class="sub-btn active" data-sub="14237" data-page-node-id="MAF9Pqt68A3avMWSCXlBqq">手机媒体概论<em data-page-node-id="yLEmEu54EzFVDnKL1N0tEG">14237</em></button>
+    <button class="sub-btn" data-sub="08257" data-page-node-id="SDCrXXDf9K4gTJBCl43xSG">舆论学<em data-page-node-id="GJ2Hr27ZQi4BnWionY76AV">08257</em></button>
+  </nav>
+</header>
+
+<nav class="tabs" data-page-node-id="EaDNjgAtVsBv3ZZ4NFHwHK">
+  <button class="tab active" data-mode="practice" data-page-node-id="NGupSUs2h2pKwOD0oyVGdh">练习</button>
+  <button class="tab" data-mode="recite" data-page-node-id="xbFVON9nc9z5svGYaf6YjF">背题卡</button>
+  <button class="tab" data-mode="exam" data-page-node-id="Gon6ofIOTDV7dCEVzoUxCQ">模拟考试</button>
+  <button class="tab" data-mode="wrong" data-page-node-id="9linrW1DARDMijGS14T1Iy">错题本</button>
+  <button class="tab" data-mode="cram" data-page-node-id="qaowCMoOkflaBgspNrXYGs">考点速背</button>
+  <button class="tab" data-mode="stats" data-page-node-id="2MW3AEUDLdp6z8Br242jzF">统计</button>
+</nav>
+
+<main class="wrap" data-page-node-id="KgCRnydt5ncXQbReFxlu4v">
+
+  <div class="tip" data-page-node-id="h0mYAACNXITkkfNcYQiBGz">
+    <b data-page-node-id="PI27BhnkhxIcX1vJCQHu5r">范围怎么选：</b><span class="badge era era-new" data-page-node-id="mDpK4Q7hxSPNdHSZqhX8YQ">新大纲核心</span> = 按 2024 修订版教材/真题整理，<b data-page-node-id="m2qQccuiKfAQ8xVWR2OdRe">优先刷这个</b>；
+    <span class="badge era era-mid" data-page-node-id="WGTAkZcoRNb4NBjUyDXAw1">通用/参考</span> = 概念仍通用；
+    <span class="badge era era-legacy" data-page-node-id="qafD92pjRRS7DwkduDg09d">旧大纲（仅参考）</span> = 2024 年前旧题库，有时间再看。
+    题目下方会标注来源（真题年份 / 依大纲命题）。
+  </div>
+
+  <!-- ============ 筛选器 ============ -->
+  <section id="filterBar" class="panel filters" data-page-node-id="tmteVxTjxEAKVB0NsTrhUF">
+    <div class="frow" data-page-node-id="ilRImAwIATqHEUOr8qEryp">
+      <label class="fl" data-page-node-id="QQUNr3j0Dlnljx94Lt9r1Q">题型</label>
+      <div class="chips" id="fType" data-page-node-id="LTFTmCs24JwAlFxvftvTuD"></div>
+    </div>
+    <div class="frow" data-page-node-id="BrJtBEzVh7QW31QxHHCh7w">
+      <label class="fl" data-page-node-id="dMgcAm3v7FTgFeMgscGDXQ">范围</label>
+      <div class="chips" id="fEra" data-page-node-id="kw4nezIWjQrwlULpUeQrIY"></div>
+    </div>
+    <div class="frow" data-page-node-id="9DOkjMtAHGudapKNNO6yz4">
+      <label class="fl" data-page-node-id="WTTiDxKhiKWbFKoFNO5B1P">状态</label>
+      <div class="chips" id="fStatus" data-page-node-id="TzCqZ1XwT9AYXYG4ZZOVIf"></div>
+    </div>
+    <div class="frow" data-page-node-id="DsNMCD3piTB7oHaI46358S">
+      <label class="fl" data-page-node-id="JRIEga8DDj03cMceYSHVLm">章节/套卷</label>
+      <div class="chips" id="fChapter" data-page-node-id="Fct6DB4g0sAfxH5vVHbD4S"></div>
+    </div>
+    <div class="frow" data-page-node-id="G5A7cSS6CKhNwUd0a27R81">
+      <label class="fl" data-page-node-id="n6cKOWGptDPKC0fnEc2IHz">搜索</label>
+      <input id="fKw" class="kw" type="search" placeholder="输入关键词，如：茧房 / STIP / 谣言 / 舆论质量" data-page-node-id="CPn01VRhfpcituA71Oovz3">
+    </div>
+    <div class="frow frow-end" data-page-node-id="2tgwDiVD1Zir16xT97OSk7">
+      <span class="fcount" id="fCount" data-page-node-id="5uU9HLf1JdDBgonL0DLuIA"></span>
+      <button class="mini" id="btnReset" data-page-node-id="ccdzQeFBqTMo6vTaI1FjMN">重置筛选</button>
+      <button class="mini" id="btnShuffle" data-page-node-id="EXEtjisaiVOipSJIciqjwZ">打乱顺序</button>
+    </div>
+  </section>
+
+  <!-- ============ 练习 / 背题 / 错题 ============ -->
+  <section id="cardView" class="panel card-view" data-page-node-id="5oJSJAGZ6knDVaHQmApHsM">
+    <div id="qBody" data-page-node-id="mErONobESDT7rgGsjAGgNp">
+    <div class="qhead" data-page-node-id="Cbm93fEHGAgZKWcmx6LEAQ">
+      <div class="qmeta" data-page-node-id="QDbQi4QOqBpRVZPYS8b0BK">
+        <span class="badge" id="qType" data-page-node-id="fCXr8NVCC6WbkFSouSCoE3"></span>
+        <span class="badge grey" id="qSrc" data-page-node-id="zk3UGe5Ci77uMEtIiXk8KF"></span>
+        <span class="badge era" id="qEra" data-page-node-id="XdzhzQP5oRKrpAeFySOsMo"></span>
+        <button class="star" id="btnStar" title="收藏" data-page-node-id="tcTpwkB3OEv4kyQafOkG3J">☆</button>
+      </div>
+      <div class="qprog" data-page-node-id="awV0JaFHkoKEDEbEtFe93l"><span id="qPos" data-page-node-id="1MqwOHYq7KO7V7k5NKr4v6"></span><div class="pbar" data-page-node-id="tQ3DYUdC7LTLittEZ26ALm"><i id="qBar" data-page-node-id="Ml6WmhpjCiTcGlFaj8W6Cl"></i></div></div>
+    </div>
+
+    <div class="qstem" id="qStem" data-page-node-id="C5V4T33CloW2tmkbleAu9x"></div>
+    <div class="qmaterial" id="qMaterial" data-page-node-id="kLznHf8mYsaJPK22uTBUWd"></div>
+
+    <div id="qOptions" class="options" data-page-node-id="p3QRuOPUrn9M1dBDEYFKIM"></div>
+
+    <div id="fillBox" class="fillbox" style="display:none" data-page-node-id="APwLz3LWsrnwQ0WopwTHVf">
+      <input id="fillInput" type="text" placeholder="输入答案后回车，或点“看答案”" data-page-node-id="FAnZ0KGqnW8HyCe6PqxuWW">
+      <button class="btn" id="fillSubmit" data-page-node-id="DDipBthCMTHBlSYWgDGPoi">提交</button>
+    </div>
+    <div id="fillTip" style="font-size:13px;margin:-6px 0 10px" data-page-node-id="x1ppzOW9Lqb1KcWBxQJ0tD"></div>
+
+    <div id="answerBox" class="answerbox" style="display:none" data-page-node-id="25I0HHmSKpZohWgkL247sX">
+      <div class="alabel" id="alabel" data-page-node-id="WZ9zUfwPxHubrquDxgZrE0">参考答案</div>
+      <div class="atext" id="aText" data-page-node-id="iNkgNaG4ij5ObmLhITJ8OG"></div>
+      <div class="analysis" id="aAnalysis" style="display:none" data-page-node-id="Qg7oObLBVy7X13NAwtAjIW"></div>
+      <div class="selfgrade" data-page-node-id="4UPueIWekqlKTiJX1E7Ltc">
+        <span data-page-node-id="tgpVoKv0i82emLpWwaZXDu">自评：</span>
+        <button class="gbtn ok" data-g="1" data-page-node-id="NH1fEA5HTgYGwrOAdL5So1">会了</button>
+        <button class="gbtn no" data-g="0" data-page-node-id="hL3MFmw0xb8781iKgTQx7J">不会</button>
+      </div>
+    </div>
+
+    <div class="actions" data-page-node-id="b5KeJAr1IYGpaKK7AvfDb5">
+      <button class="btn ghost" id="btnPrev" data-page-node-id="p0F8T7WJG00I9DB2sDnp1f">上一题</button>
+      <button class="btn primary" id="btnShow" data-page-node-id="3W0GS72HHKPKaf1Led9EFD">看答案</button>
+      <button class="btn" id="btnNext" data-page-node-id="zVHCp2oegKIO5vDyIagF2h">下一题</button>
+    </div>
+    <div class="hint" data-page-node-id="hSUlKcKeC8d1k34IlgCjhB">快捷键：<b data-page-node-id="xi2CB5X5rwqJKwLQmTm7Ko">1-5</b> 选选项 · <b data-page-node-id="TdAg5QY6C9iZr3U9t3jl5r">空格</b> 看答案/下一题 · <b data-page-node-id="8HBhE2RBMVaAkUAx2AjsgF">←→</b> 翻页 · <b data-page-node-id="Rz3yy9jWXbNBRySYoE50EA">S</b> 收藏</div>
+    </div>
+    <div id="emptyTip" class="empty" style="display:none" data-page-node-id="cAXC3v8CRzcmign57ylg4v"></div>
+  </section>
+
+  <!-- ============ 模拟考试 ============ -->
+  <section id="examView" class="panel" style="display:none" data-page-node-id="B20bUGmOKnO9WFj4obcUB4">
+    <div class="exam-setup" id="examSetup" data-page-node-id="mMKSUaywtcov8IMTQyrEG4">
+      <h3 data-page-node-id="LK81TmyTS9r3NvUPgI7VZK">按真实题型配比组卷</h3>
+      <div class="examtpl" id="examTpl" data-page-node-id="Ja7BJeV03cg2nHkLEmyRCs"></div>
+      <label class="chkline" data-page-node-id="nrwdZxmrxXDMg6brE2YQJV"><input type="checkbox" id="examTimer" checked data-page-node-id="5sFj4KIxkS1sTiWczEuheI"> 开启 150 分钟倒计时</label>
+      <label class="chkline" data-page-node-id="LRasa4Mu7xEPnZlt9IglKw"><input type="checkbox" id="examOnlyNew" checked data-page-node-id="FAgb84iclC0HqwE92wfR3H"> 只从「新大纲范围」抽题</label>
+      <button class="btn primary big" id="btnStartExam" data-page-node-id="AckWHxNlyCJns3BuBt4nxB">开始考试</button>
+    </div>
+    <div class="exam-run" id="examRun" style="display:none" data-page-node-id="MvOMcfEQj5Jhz6NOGNLB2a">
+      <div class="exam-top" data-page-node-id="6Rk3MAJftGajwXCtXyAy7T">
+        <span id="examClock" class="clock" data-page-node-id="91Jn3GhzryBu4sowMe3axo">150:00</span>
+        <span id="examProg" class="grey" data-page-node-id="Pvvoni7hEWDgdonbeX4ksg"></span>
+        <button class="mini" id="btnSubmitExam" data-page-node-id="BsJekMd2QuWGXWCAQS2MUF">交卷</button>
+      </div>
+      <div id="examPaper" data-page-node-id="dXrU14DnggQgbDFlC3AULu"></div>
+      <button class="btn primary big" id="btnSubmitExam2" data-page-node-id="bw09qjp5lfyxYJp0FOYUHM">交卷并判分</button>
+    </div>
+    <div class="exam-result" id="examResult" style="display:none" data-page-node-id="duAQxmDVnCNGV2jQXZ6sEQ"></div>
+  </section>
+
+  <!-- ============ 考点速背 ============ -->
+  <section id="cramView" class="panel" style="display:none" data-page-node-id="IG0MsjTl17iIqrbleFC0iv">
+    <div class="cram-bar" data-page-node-id="IxE55stgempfb0JXVorwNg">
+      <div class="chips" id="cramType" data-page-node-id="btqJELd9Y50agaODM9z6iW"></div>
+      <label class="chkline" data-page-node-id="HIqyCwBqE1Pxz2eUhLCHcJ"><input type="checkbox" id="cramHide" data-page-node-id="caLhn3maH3zpYdg6MYMxvN"> 隐藏答案（点击题目展开）</label>
+    </div>
+    <div id="cramList" data-page-node-id="TuCAxmf51PaNvbY2FsT71T"></div>
+  </section>
+
+  <!-- ============ 统计 ============ -->
+  <section id="statsView" class="panel" style="display:none" data-page-node-id="3ixcBXlIiSNfRsvfAnaaBh">
+    <div id="statsBody" data-page-node-id="T5oNHSpJKlkgpfJOeE9xdy"></div>
+    <div class="danger-zone" data-page-node-id="ivhKxhUstMRgsQdavO8XT7">
+      <button class="mini" id="btnExport" data-page-node-id="h1NRpyGt6wogRQXYHhRRwa">导出进度</button>
+      <button class="mini" id="btnImport" data-page-node-id="GKTp4xzs6HedjICDjuimAH">导入进度</button>
+      <button class="mini danger" id="btnResetAll" data-page-node-id="6AUtD1GeBxElFWn9XARdA1">清空全部进度</button>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot" data-page-node-id="TjLdyqaxN9r11nF9KFIm2Y">
+  共 1065 题（舆论学 598 / 手机媒体概论 467）· 数据全部保存在本机浏览器（localStorage），不上传任何服务器。<br data-page-node-id="PfaRpsmu3AJKcpb6THeIXp">
+  来源：你提供的 3 份题库 PDF + 网络公开的 2024/2025 真题与按新大纲整理的考点题。标注「新大纲核心」的优先刷。
+</footer>
+
+<script src="data/questions.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>
